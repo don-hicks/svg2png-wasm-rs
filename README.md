@@ -1,6 +1,8 @@
 
 # **svg2png-wasm-rs**
 
+> **Warning**: This project is a work-in-progress and is **not** yet ready for production use. The functionality is not fully implemented, and breaking changes may occur in future versions. Please use with caution.
+
 A Rust-based WebAssembly (WASM) library that converts SVG (Scalable Vector Graphics) to PNG (Portable Network Graphics). This library is designed for use in serverless environments and is optimized for both client-side (browser) and backend (serverless function) usage. 
 
 ## **Features**
@@ -44,46 +46,6 @@ const { convertSvgToPng } = require('svg2png-wasm-rs');
 
 async function handler(req, res) {
   const svg = req.body.svg;
-  const pngData = await convertSvgToPng(svg);
-
-  res.setHeader('Content-Type', 'image/png');
-  res.send(pngData);
-}
-```
-
-## **Usage**
-
-### **Basic Usage (Browser)**
-
-You can convert an SVG string to a PNG using the `convertSvgToPng()` function. It accepts an SVG string and returns a **Uint8Array** of PNG data that can be used in your app.
-
-```javascript
-import { convertSvgToPng } from 'svg2png-wasm-rs';
-
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">...</svg>`;
-const pngData = convertSvgToPng(svg);
-```
-
-Once you have the **PNG data**, you can display it as an image, upload it, or process it as needed:
-
-```javascript
-const blob = new Blob([pngData], { type: 'image/png' });
-const url = URL.createObjectURL(blob);
-
-const img = new Image();
-img.src = url;
-document.body.appendChild(img);
-```
-
-### **Backend Usage (Serverless/Node.js)**
-
-The library can also be used in a **serverless** function or **Node.js** backend. Here’s how you can integrate it:
-
-```javascript
-const { convertSvgToPng } = require('svg2png-wasm-rs');
-
-async function convertAndRespond(req, res) {
-  const svg = req.body.svg;  // SVG sent from client
   const pngData = await convertSvgToPng(svg);
 
   res.setHeader('Content-Type', 'image/png');
@@ -155,5 +117,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Rust** for its speed and safety.
 - **WASM** for bringing Rust to the web and serverless environments.
 - **The open-source community** for contributing ideas, tools, and libraries that make projects like this possible.
-
----
