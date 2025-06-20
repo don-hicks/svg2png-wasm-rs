@@ -1,0 +1,32 @@
+# Rust
+/target/
+**/*.rs.bk
+**/*.rs.save
+
+# WASM
+/pkg/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# .env files (to protect sensitive data)
+.env
+
+# Rust-specific files
+Cargo.lock
+
+# MacOS-specific files
+.DS_Store
+
+# Vercel and Serverless Deployment
+.vercel/
+.serverless/
+
+# IDEs
+.idea/
+.vscode/
+
+# Rust Debug Files
+/debug/
