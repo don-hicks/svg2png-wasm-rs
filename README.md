@@ -155,3 +155,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Rust** for its speed and safety.
 - **WASM** for bringing Rust to the web and serverless environments.
 - **The open-source community** for contributing ideas, tools, and libraries that make projects like this possible.
+
+---
